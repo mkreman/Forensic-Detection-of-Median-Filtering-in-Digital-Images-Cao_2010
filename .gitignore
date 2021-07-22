@@ -1,3 +1,5 @@
+Detection_Of_Median_Filtering_org.ipynb
+Differences.ipynb
 Presentations
 Data
 2010_Cao et al._Forensic Detection of Median Filtering in Digital Images.pdf
@@ -12,6 +14,7 @@ Figure_2.py
 Figure_3.py
 Figure_4.py
 Figure_5.py
+data.py
 test.m
 test_copy.png
 ucid00001.tif

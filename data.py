@@ -11,7 +11,7 @@ def data(X, Y, threshold):
             rates[1] += 1
         else:
             rates[3] += 1
-    
-    TP_rate = rates[0]/(rates[0]+rates[2])
-    FP_rate = rates[1]/(rates[1]+rates[3])
+
+    TP_rate = rates[0] / (rates[0] + rates[2])
+    FP_rate = rates[1] / (rates[1] + rates[3])
     return (TP_rate, FP_rate)
