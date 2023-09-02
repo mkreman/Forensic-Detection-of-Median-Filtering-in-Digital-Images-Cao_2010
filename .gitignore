@@ -1,0 +1,17 @@
+__pycache__
+.ipynb_checkpoints
+.vscode
+Data/Old-data
+Data/UCID
+Presentations
+2010_Cao et al._Forensic Detection of Median Filtering in Digital Images.pdf
+caoICME10.m
+Detection_Of_Median_Filtering_org (1).ipynb
+Detection_Of_Median_Filtering_org.ipynb
+Detection_Of_Median_Filtering.ipynb
+Differences.ipynb
+Notebook.pdf
+test_copy.png
+test.m
+test.py
+ucid00001.tif
