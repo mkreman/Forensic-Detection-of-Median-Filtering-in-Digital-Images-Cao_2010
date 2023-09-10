@@ -44,7 +44,22 @@ def TPFP_calculator(X, Y, threshold):
 
     TP_rate = rates[0] / (rates[0] + rates[2])  # Recall of class 1
     FP_rate = rates[1] / (rates[1] + rates[3])  # Recall of class 0
-    return (TP_rate, FP_rate)
+    accuracy = (rates[0] + rates[3]) / (sum(rates))
+    return (TP_rate, FP_rate, accuracy)
+
+
+# Takes TP and FP rates and respective range of threshold values and
+# compute the best TP, FP, Accuracy, Threshold value for given TP and FP rates
+def best_threshold(true_pos, false_pos, acc, thresholds):
+    best_rate = 0
+    for i in range(len(thresholds)):
+        if (true_pos[i] - false_pos[i])/2 > best_rate:
+            best_rate = (true_pos[i] - false_pos[i])/2
+            best_threshold = thresholds[i]
+            best_tp = true_pos[i]
+            best_fp = false_pos[i]
+            best_acc = acc[i]
+    return {'best TP rate': best_tp, 'best FP rate': best_fp, 'best accuracy': best_acc, 'best threshold': best_threshold}
 
 
 # Function for extracting feature from the image array

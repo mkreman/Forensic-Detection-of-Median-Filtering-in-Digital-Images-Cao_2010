@@ -1,0 +1,2 @@
+If feature csv file has name 'a_feature.csv' -> filter 'a' is applied on uncompressed images and feature is calculated.
+If feature csv file has name 'a_b_feature.csv' -> filter 'a' is applied on uncompressed images then filter 'b' is applied and feature is calculated.
