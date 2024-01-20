@@ -1,13 +1,13 @@
 # Forensic Detection of Median Filtering in Digital Images
 This GitHub project presents the Python code for detecting median filtering in images based on the [study](https://ieeexplore.ieee.org/abstract/document/5583869) done by Gang Cao, Yao Zhao, Rongrong Ni, Lifang Yu, Huawei Tian. I used the [UCID Dataset](https://www.researchgate.net/publication/220979862_UCID_An_uncompressed_color_image_database) for training the model.
-The study aims to detect the tempering process on image documents done by forgery makers.
+The study aims to detect the tempering process using median filtering on image documents done by forgery makers.
 
 # Overview
 This project follows the following steps
 - Grayscale images are being used by converting the images into grayscale images in the standard manner.
 - The UCID dataset is considered as negative images (original uncompressed images) for the model.
 - Positive images are created by applying median filtering on the same dataset images.
-- Hyperparameters are tunned using cross-validation.
+- Hyperparameters are tuned using cross-validation.
 - ROC curves are created and the results given in the paper are verified.
 
 # Data Preparing
@@ -24,4 +24,4 @@ If the images are post processed (jpeg compression) after applying median filter
 # Limitations and Future Work
 The model works well for uncompressed images but does not work well for other filtered images like (Gaussian, average, and JPEG compressed images).
 
-Since computing a feature to determine median filtering is a very difficult task and is affected by various manipulations. And affected by the post processing of positive images. Therefore there is a need for a technique that automatically computes the feature and classifies the median filtering. ML algorithm is the way to go. I explored a such technique in [this GitHub repository](https://github.com/mkreman/Median-Filtering-Forensics-Based-on-Convlutional-Neural-Network.git).
+Since computing a feature to determine median filtering is a very difficult task and is affected by various manipulations. And affected by the post-processing of positive images. Therefore, there is a need for a technique that automatically computes the feature and classifies the median filtering. ML algorithm is the way to go. I explored a such technique in [this GitHub repository](https://github.com/mkreman/Median-Filtering-Forensics-Based-on-Convlutional-Neural-Network.git).
