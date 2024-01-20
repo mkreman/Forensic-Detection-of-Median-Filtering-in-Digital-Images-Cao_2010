@@ -12,16 +12,23 @@ This project follows the following steps
 
 # Data Preparing
 The model takes original uncompressed images and various filtered (Gaussian, average, jpeg55,..., etc.) images of the UCID dataset as negative values. And their median filtered images are taken as positive values.
+Therefore, the required dataset is created using OpenCV library.
 
 # Model Architecture
-Since the median filter makes the neighboring pixel same. Model counts the zeros of row and column difference of images. Look for the zeros on the textured region and compare them with a threshold to identify the image as a median-filtered or non-median-filtered one.
+Since the median filter makes the neighboring pixel same in terms of pixel values.
+Model counts the zeros of row and column difference of images. Look for the zeros on the textured region and compare them with a threshold to identify the image as a median-filtered or non-median-filtered one.
 
 # Results
-For classification between original and median filtered images, the model performed well using the parameters d (the width of the square statistical region) = 7, tau (a threshold to determine whether a region is textured or not) = 100, and threshold (to determine whether the image is median filtered or not) = 0.22 with 98.5% recall for class 1 (median filtered images) and 99% recall for class 0 (original images).
+For classification between original and median filtered images, the model performed 
+well using the parameters $d$ (the width of the square statistical region) = 7, $\tau$ (a threshold to determine whether a region is textured or not) = 100, and threshold (to determine whether the image is median filtered or not) = 0.22 with 98.5% recall for class 1 (median filtered images) and 99% recall for class 0 (original images).
 
 If the images are post processed (jpeg compression) after applying median filter then the model yield a lower recall of $72.24\%$.
 
 # Limitations and Future Work
 The model works well for uncompressed images but does not work well for other filtered images like (Gaussian, average, and JPEG compressed images).
 
-Since computing a feature to determine median filtering is a very difficult task and is affected by various manipulations. And affected by the post-processing of positive images. Therefore, there is a need for a technique that automatically computes the feature and classifies the median filtering. ML algorithm is the way to go. I explored a such technique in [this GitHub repository](https://github.com/mkreman/Median-Filtering-Forensics-Based-on-Convlutional-Neural-Network.git).
+Since computing a feature to determine median filtering is a very difficult task
+and is affected by various manipulations such as the post-processing of positive
+images. Therefore, there is a need for a technique that automatically computes the
+feature and classifies the median filtering. ML algorithm is the way to go. 
+I explored a such technique in [this Project](https://github.com/mkreman/Median-Filtering-Forensics-Based-on-Convlutional-Neural-Network.git).
